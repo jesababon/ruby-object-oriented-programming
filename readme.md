@@ -84,3 +84,70 @@ end
 ```
 
 So now instead of defining two separate methods that take up three lines of code each, we now have only two lines of code that do exactly the same thing. Keeps our code nice and clean, which is what we strive for. 
+
+### BUT!! 
+
+We can get this code even cleaner, and even more compact. Instead of having an `attr_reader` and `attr_writer` for each variable that we want to be able to play with, which could get super repetitive, and might lead to soemthing like...
+
+```ruby
+class Person
+	attr_reader :name, :nickname, :catchphrase
+	attr_writer :name, :nickname, :catchphrase
+	# ...rest of code
+end
+```
+
+...we can combine both `attr_reader` and `attr_writer` into something that's basically `attr_reader_and_writer`, which ruby calls `attr_accessor`. So then we end up with something that looks more like...
+
+```ruby
+class Person
+	attr_accessor :name, :nickname, :catchphrase
+	# ...code
+end
+```
+
+## Inheritance
+
+The last thing we need to touch on in terms of Object-Oriented Programming is **_Inheritance_**. Inheritance is something that we already know about, and something that we've used extensively already. Every time we spin up a new React component, we've used the concept of Inheritance. Every time we saw that `extends` keyword whenever we wrote...
+
+```javascript
+class MyNewComponent extends React.Component {
+	//code;
+};
+```
+...we told Javascript that we want a few methods from `React.Component` in addition to all of the methods that we defined ourselves in subsequent lines of code. 
+
+We can do the same thing in ruby using the following syntax: 
+
+```ruby
+class Programmer < Person
+end
+```
+
+Having done this, we've told Ruby that every Programmer that we spin up is also a Person, meaning it has every method inside Person, as well as any new methods that are specific to a Programmer.
+
+Now, to check our work, if we spin up a couple of new instances of Programmer and Person, we can really hammer home this idea of Inheritance by having ruby check whether or not an instance of a class has inherited properly.
+
+We'll spin up the following instantiations:
+
+```ruby
+peter = Person.new("Peter", "Pete", "I like to sing")
+bell = Programmer.new("John", "Bell", "Ruby is better than Javascript", {
+	github: "johnrbell",
+	languages: ["python","javascript", "ruby", "golang"],
+	code_editor: "sublime text"
+	})
+```
+
+Now that we have these instances just kinda floating in the aether, we can use a method built into every class known as `is_a?` that checks to see if a class instance is an instance of any given class.
+
+Now let's run the following checks in Pry:
+
+```ruby
+peter.is_a?(Person) # => true
+peter.is_a?(Programmer) # => false
+bell.is_a?(Person) # => true
+bell.is_a?(Programmer) # => true
+```
+## Conclusion
+Classes in ruby behave in a much stricter way than classes/objects in JavaScript. There are more hoops to jump through, which leads to more consistent and predictable behavior when accessing class methods, and we won't have that issue of accidentally reassigning object properties because we have to check ourselves and actually write out those methods to access those properties. 
