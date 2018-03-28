@@ -25,14 +25,14 @@ We'll be using keyword `initialize` to start up our class, and here, we'll defin
 
 ```ruby
 class Person 
-	def initialize(name, nickname, catchphrase)
-		@name = name
-		@nickname = nickname
-		@catchphrase = catchphrase
-	end
-	def introduce
-		"hi there"
-	end
+  def initialize(name, nickname, catchphrase)
+    @name = name
+    @nickname = nickname
+    @catchphrase = catchphrase
+  end
+  def introduce
+    "hi there"
+  end
 end
 ```
 
@@ -49,10 +49,10 @@ The thing about ruby classes, though, is that we can't actually read out the pro
 
 ```
 def name= new_name
-	@name = new_name
+  @name = new_name
 end
 def name
-	"hi there, my name is #{@name}"
+  "hi there, my name is #{@name}"
 end
 ```
 
@@ -70,16 +70,16 @@ It's also convention to throw our helpers right underneath our class declaration
 
 ```ruby
 class Person 
-	attr_reader :name 
-	attr_writer :name
-	def initialize(name, nickname, catchphrase)
-		@name = name
-		@nickname = nickname
-		@catchphrase = catchphrase
-	end
-	def introduce
-		"hi there"
-	end
+  attr_reader :name 
+  attr_writer :name
+  def initialize(name, nickname, catchphrase)
+    @name = name
+    @nickname = nickname
+    @catchphrase = catchphrase
+  end
+  def introduce
+    "hi there"
+  end
 end
 ```
 
@@ -91,9 +91,9 @@ We can get this code even cleaner, and even more compact. Instead of having an `
 
 ```ruby
 class Person
-	attr_reader :name, :nickname, :catchphrase
-	attr_writer :name, :nickname, :catchphrase
-	# ...rest of code
+  attr_reader :name, :nickname, :catchphrase
+  attr_writer :name, :nickname, :catchphrase
+  # ...rest of code
 end
 ```
 
@@ -101,8 +101,8 @@ end
 
 ```ruby
 class Person
-	attr_accessor :name, :nickname, :catchphrase
-	# ...code
+  attr_accessor :name, :nickname, :catchphrase
+  # ...code
 end
 ```
 
@@ -112,7 +112,7 @@ The last thing we need to touch on in terms of Object-Oriented Programming is **
 
 ```javascript
 class MyNewComponent extends React.Component {
-	//code;
+  //code;
 };
 ```
 ...we told Javascript that we want a few methods from `React.Component` in addition to all of the methods that we defined ourselves in subsequent lines of code. 
