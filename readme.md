@@ -106,6 +106,30 @@ class Person
 end
 ```
 
+## Private Methods
+
+If there are methods that we don't want the rest of our app to access, or if there are properties that we don't want changed, we can write private methods that are only available in our class and nowhere else. This won't make sense in a vacuum, where we're writing classes in isolation of anything else, but these will be things that we'll see later. The selling point for this is that it keeps certain functionalities contained strictly within the context of the class in which you define this particular method. Not even children of these classes will have access to these methods, and they can only be called from within the class in which it is defined.
+
+This is helpful for defining methods that change instance variables. Those methods can easily be defined in your class, and then called by other class methods, but not be available to be called directly like you would your standard methods.
+
+The way you define private methods in ruby classes is simple. You write the word `private` and then define your method under it. Easy peasy.
+
+
+```ruby
+class Person
+  attr_accessor :name, :nickname, :catchphrase
+  # ...code
+  
+  private
+  
+  def do_not_touch_this_method
+    # ...code to not be touched
+  end
+end
+```
+
+And then that's it.
+
 ## Inheritance
 
 The last thing we need to touch on in terms of Object-Oriented Programming is **_Inheritance_**. Inheritance is something that we already know about, and something that we've used extensively already. Every time we spin up a new React component, we've used the concept of Inheritance. Every time we saw that `extends` keyword whenever we wrote...
