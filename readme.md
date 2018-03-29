@@ -182,11 +182,11 @@ To keep things simple, `size` will be one of three strings, `small`, `medium`, o
 
 [Look here if you forgot about default arguments](https://git.generalassemb.ly/wdi-nyc-goat/LECTURE_U04_D01_Ruby_101)
 
-After that, extend the `Pokemon` class to a specific pokemon class,  `Pikachu`, which will have all of the initial properties of a `Pokemon`, in addition to a `type`, as well as a `primary_attack`. `Pikachu` will have a method, `attack`, which will access the `primary_attack` instance variable. `Pikachu` should also be able to make a different `sound` than `"rawr"`
+After that, extend the `Pokemon` class to a specific pokemon class, `class SpecificPokemon`, which will have all of the initial properties of a `Pokemon`, in addition to a `name`, `type`, and a `primary_attack`. Instantiate a `SpecificPokemon`, `pikachu`, which will have a method, `attack`, that accesses the `primary_attack` instance variable. This new instance should also be able to make a different `sound` than `"rawr"`
 
 
 ### Bonus
-Allow `Pikachu` to learn a new move by defining a method that rewrites its `primary_attack`
+Allow your `SpecificPokemon` to learn a new move by defining a method that rewrites its `primary_attack`
 
 ## Conclusion
 Classes in ruby behave in a much stricter way than classes/objects in JavaScript. There are more hoops to jump through, which leads to more consistent and predictable behavior when accessing class methods, and we won't have that issue of accidentally reassigning object properties because we have to check ourselves and actually write out those methods to access those properties. 
