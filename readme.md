@@ -174,5 +174,17 @@ peter.is_a?(Programmer) # => false
 bell.is_a?(Person) # => true
 bell.is_a?(Programmer) # => true
 ```
+
+## Lab
+Having learned the advantages of classes, we're going to get a little bit of practice defining, instantiating, and extending classes. What we're going to do now is define a class, `Pokemon`, that will have properties `size`, `weight_class`, `habitat`. 
+
+To keep things simple, `size` will be one of three strings, `small`, `medium`, or `large`, and `weight_class` will either be `light`, `middle`, or `heavy`. Finally, `habitat` will be either `land`, `sky`, or `water`. Define a method, `speak` that takes a parameter with a default value, `sound = "rawr"`. Calling this method without an argument will simply `puts "rawr"`. If it has an argument, it will `puts` the argument.
+
+After that, extend the `Pokemon` class to a specific pokemon class,  `Pikachu`, which will have all of the initial properties of a `Pokemon`, in addition to a `type`, as well as a `primary_attack`. `Pikachu` will have a method, `attack`, which will access the `primary_attack` instance variable.
+
+
+### Bonus
+Allow `Pikachu` to learn a new move by defining a method that rewrites its `primary_attack`
+
 ## Conclusion
 Classes in ruby behave in a much stricter way than classes/objects in JavaScript. There are more hoops to jump through, which leads to more consistent and predictable behavior when accessing class methods, and we won't have that issue of accidentally reassigning object properties because we have to check ourselves and actually write out those methods to access those properties. 
