@@ -21,11 +21,11 @@ Finally, just like we saw mainly in React, we can have objects inherit propertie
 ## Differences between JS and RB classes
 One of the key differences between Javascript and Ruby classes is that you can't actually access properties outside of the class itself. That is to say that you look at object properties that we set in ruby's version of our `constructor`, which we'll call `initialize`. 
 
-We'll be using keyword `initialize` to start up our class, and here, we'll define all of our properties and variables that are available to our class. These are called instance variables and will be available to other methods in our class. These behave exactly as variables that we'd define in our `constructor` method in javascript using `this.variableName = 'some variable`. Before we start testing stuff in our terminal, we're going to define a quick and dirty method that will just return a string. And in Ruby, the last line of every method between `def ... end` is always returned, meaning we don't have to actually say anything about returning anything.
+We'll be using keyword `initialize` to start up our class, and here, we'll define all of our properties and variables that are available to our class. These are called instance variables and will be available to other methods in our class. These behave exactly as variables that we'd define in our `constructor` method in javascript using `this.variableName = 'some variable'`. Before we start testing stuff in our terminal, we're going to define a quick and dirty method that will just return a string. And in Ruby, the last line of every method between `def ... end` is always returned, meaning we don't have to actually say anything about returning anything.
 
 ```ruby
 class Person 
-  def initialize(name, nickname, catchphrase)
+  def initialize(name, nickname, catchphrase, age)
     @name = name
     @nickname = nickname
     @catchphrase = catchphrase
@@ -39,13 +39,13 @@ end
 Spinning up new instances of this class is exactly the same as how we'd do it in javascript. So if we want a new person, it's as easy as...
 
 ```ruby
-jason = Person.new("Jason", "Jase", "same")
+jason = Person.new("Jason", "Jase", "same", 23)
 ```
 ...and we can just use this pattern to spin up (or _instantiate_) new examples of this class over and over again, and they'd all have the same methods but different names, nicknames, and catchphrases. This is our way of implementing **_Modularity_** in our code. Every class is the same in structure, but different in content.
 
 ## Reading and Writing Properties
 
-The thing about ruby classes, though, is that we can't actually read out the properties that we define in the initializer. Ruby doesn't let us do that. So we have to explicitly define methods that allow us to call on those properties. Here in ruby land we have to distinguish between properties and methods. This is because everything in ruby is a method, except for properties, which are variables. So if we were to brute force everything, we'd do something like...
+The thing about ruby classes, though, is that we can't actually read out the properties that we define in `initialize`. Ruby doesn't let us do that. So we have to explicitly define methods that allow us to call on those properties. Here in ruby land we have to distinguish between properties and methods. This is because everything in ruby is a method, except for properties, which are variables. So if we were to brute force everything, we'd do something like...
 
 ```
 def name= new_name
@@ -72,10 +72,11 @@ It's also convention to throw our helpers right underneath our class declaration
 class Person 
   attr_reader :name 
   attr_writer :name
-  def initialize(name, nickname, catchphrase)
+  def initialize(name, nickname, catchphrase, age)
     @name = name
     @nickname = nickname
     @catchphrase = catchphrase
+    @age = age
   end
   def introduce
     "hi there"
@@ -91,8 +92,8 @@ We can get this code even cleaner, and even more compact. Instead of having an `
 
 ```ruby
 class Person
-  attr_reader :name, :nickname, :catchphrase
-  attr_writer :name, :nickname, :catchphrase
+  attr_reader :name, :nickname, :catchphrase, :age
+  attr_writer :name, :nickname, :catchphrase, :age
   # ...rest of code
 end
 ```
