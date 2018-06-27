@@ -180,7 +180,7 @@ Having learned the advantages of classes, we're going to get a little bit of pra
 
 To keep things simple, `size` will be one of three strings, `small`, `medium`, or `large`, and `weight_class` will either be `light`, `middle`, or `heavy`. Finally, `habitat` will be either `land`, `sky`, or `water`. Define a method, `speak` that takes a parameter with a default value, `sound = "rawr"`. Calling this method without an argument will simply `puts "rawr"`. If it has an argument, it will `puts` the argument.
 
-[Look here if you forgot about default arguments](https://git.generalassemb.ly/wdi-nyc-goat/LECTURE_U04_D01_Ruby_101)
+[Look here if you forgot about default arguments](https://git.generalassemb.ly/wdi-nyc-tesseract/LECTURE_U04_D01_Ruby_101)
 
 After that, extend the `Pokemon` class to a specific pokemon class, `class SpecificPokemon`, which will have all of the initial properties of a `Pokemon`, in addition to a `name`, `type`, and a `primary_attack`. Instantiate a `SpecificPokemon`, `pikachu`, which will have a method, `attack`, that accesses the `primary_attack` instance variable. This new instance should also be able to make a different `sound` than `"rawr"`
 
