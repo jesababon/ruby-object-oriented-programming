@@ -39,7 +39,7 @@ end
 Spinning up new instances of this class is exactly the same as how we'd do it in javascript. So if we want a new person, it's as easy as...
 
 ```ruby
-jason = Person.new("Jason", "Jase", "same", 23)
+jason = Person.new("Eric", "Assassin", "sure", 23)
 ```
 ...and we can just use this pattern to spin up (or _instantiate_) new examples of this class over and over again, and they'd all have the same methods but different names, nicknames, and catchphrases. This is our way of implementing **_Modularity_** in our code. Every class is the same in structure, but different in content.
 
